@@ -28,10 +28,13 @@ module.exports = Object.freeze({
 	JwtTokenExpiredF: { code: 221, msg: 'ill legal token: token has been expired.', httpCode: StatusCodes.UNAUTHORIZED },
 
 	SignUpF: { code: 222, msg: 'can not sign up: try again later.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
-	SignInF: { code: 223, msg: 'can not sign in: try again later.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
-	BadCredentialF: { code: 224, msg: 'bad credentials: username or password not match.', httpCode: StatusCodes.UNAUTHORIZED },
-	RetrieveProfileF: { code: 225, msg: 'can not retrieve profile: try again later.', httpCode: StatusCodes.UNAUTHORIZED },
-	SignOutF: { code: 226, msg: 'can not sign out: token not be recalled.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
+	UserExistedF: { code: 223, msg: 'user already existed, username must be unique.', httpCode: StatusCodes.BAD_REQUEST },
+	SignInF: { code: 224, msg: 'can not sign in: try again later.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
+	BadCredentialF: { code: 225, msg: 'bad credentials: username or password not match.', httpCode: StatusCodes.UNAUTHORIZED },
+	RetrieveProfileF: { code: 226, msg: 'can not retrieve profile: try again later.', httpCode: StatusCodes.UNAUTHORIZED },
+	// prettier-ignore
+	MissingAuthorizationF: { code: 233, msg: 'unauthorized: missing authorization or x-refresh-token header in header list.', httpCode: StatusCodes.UNAUTHORIZED },
+	SignOutF: { code: 227, msg: 'can not sign out: token not be recalled.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
 	EnsureNotBadCredentialF: { code: 228, msg: 'can not ensure token is not recalled.', httpCode: StatusCodes.UNAUTHORIZED },
 	TokenBlockedF: { code: 229, msg: 'token has been recall: can not use this any more', httpCode: StatusCodes.UNAUTHORIZED },
 	TokenNotSuitableF: { code: 230, msg: 'access token and refresh token are not suitable.', httpCode: StatusCodes.UNAUTHORIZED },

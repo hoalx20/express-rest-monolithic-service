@@ -41,8 +41,7 @@ const middlewareConfig = (app) => {
 const parseBodyConfig = (app) => {
 	app.use((err, req, res, next) => {
 		if (err.status == 400) {
-			const bodyNotReadable = BodyNotReadableF;
-			response.doErrorWith(res, bodyNotReadable);
+			response.doErrorWith(res, BodyNotReadableF);
 			return;
 		}
 		next(err);
@@ -63,7 +62,7 @@ const recoveryConfig = (app) => {
 	});
 };
 
-const routeConfig = (app, ...args) => {
+const routeConfig = (app, args) => {
 	args.forEach((v) => {
 		app.use(`/api/v1/${v.uriPath}`, v.route);
 	});

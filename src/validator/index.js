@@ -4,5 +4,6 @@ const roleVal = require('./role');
 const userVal = require('./user');
 const statusVal = require('./status');
 const deviceVal = require('./device');
+const authVal = require('./auth');
 
-module.exports = { privilegeVal, pageableVal, roleVal, userVal, statusVal, deviceVal };
+module.exports = { privilegeVal, pageableVal, roleVal, userVal, statusVal, deviceVal, authVal };
