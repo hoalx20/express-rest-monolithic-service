@@ -1,0 +1,15 @@
+{
+	"id": "150cf8df-639b-42c8-b370-8e4146abaa39",
+	"name": "express_monolithic_service_dev",
+	"values": [
+		{
+			"key": "LOCAL_ENDPOINT",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-11-27T10:59:36.288Z",
+	"_postman_exported_using": "Postman/10.24.27"
+}

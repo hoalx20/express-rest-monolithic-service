@@ -1,0 +1,5858 @@
+{
+	"info": {
+		"_postman_id": "b89d21d6-89d8-4900-b807-b5aa0bd07e33",
+		"name": "express_monolithic_service_dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40009494"
+	},
+	"item": [
+		{
+			"name": "privilege",
+			"item": [
+				{
+					"name": "findAll",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllArchived",
+					"item": [
+						{
+							"name": "findAllArchived - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/archived?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/archived?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/archived?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllBy",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/search?page=1&size=5&name=CREATE",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "name",
+											"value": "CREATE"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/search?page=1&size=5&name=TEMP",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "name",
+											"value": "TEMP"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 200 (no cond)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/search?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/search?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										"search"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findById",
+					"item": [
+						{
+							"name": "findById - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (missing id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (invalid id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save - 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"DELETE\",\r\n    \"description\": \"DELETE PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing description)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CREATE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (name existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CREATE\",\r\n    \"description\": \"CREATE PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing name)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"CREATE PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (body not readable)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CREATE\",\r\n    \"description\": \"CREATE PRIVILEGE\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (empty body)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "update - 200",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (invalid id)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "id",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (deleted)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (not existed)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "6",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (body not readable)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (empty body)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "delete - 200",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 400 (invalid id)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (not existed)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "6",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (deleted)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "findAll",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllArchived",
+					"item": [
+						{
+							"name": "findAllArchived - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/archived?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/archived?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/archived?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllBy",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/search?page=1&size=5&name=USER",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "name",
+											"value": "USER"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/search?page=1&size=5&name=TEMP",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "name",
+											"value": "TEMP"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 200 (no cond)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/search?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/search?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										"search"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findById",
+					"item": [
+						{
+							"name": "findById - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (missing id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (invalid id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/privileges/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"privileges",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save - 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"USER\",\r\n    \"description\": \"USER ROLE\",\r\n    \"privilegeIds\": [1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (owning not existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"ADMIN\",\r\n    \"description\": \"ADMIN ROLE\",\r\n    \"privilegeIds\": [-1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing description)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CREATE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (name existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"USER\",\r\n    \"description\": \"USER PRIVILEGE\",\r\n    \"privilegeIds\": [1, 2]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing privilegeIds)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"USER\",\r\n    \"description\": \"USER PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing name)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"CREATE PRIVILEGE\",\r\n    \"privilegeIds\": [1, 2, 3, 4]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (body not readable)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CREATE\",\r\n    \"description\": \"CREATE PRIVILEGE\",\r\n    \"privilegeIds\": [1, 2, 3, 4],\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (empty body)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "update - 200",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"USER BETA ROLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (invalid id)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalidId",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (deleted)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (not existed)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "3",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (body not readable)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"TEMP BETA PRIVILEGE\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (empty body)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "delete - 200",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 400 (invalid id)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (not existed)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "3",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (deleted)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/roles/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"roles",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "findAll",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllArchived",
+					"item": [
+						{
+							"name": "findAllArchived - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/archived?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/archived?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/archived?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllBy",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/search?page=1&size=5&username=hoalx1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "username",
+											"value": "hoalx1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/search?page=1&size=5&username=TEMP",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "username",
+											"value": "TEMP"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 200 (no cond)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/search?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/search?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findById",
+					"item": [
+						{
+							"name": "findById - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (missing id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (invalid id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save - 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hoalx2\",\r\n    \"password\": \"hoalx2\",\r\n    \"roleIds\": [1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (owning not existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hoalx3\",\r\n    \"password\": \"hoalx3\",\r\n    \"roleIds\": [-1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing username)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CREATE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (name existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hoalx1\",\r\n    \"password\": \"hoalx1\",\r\n    \"roleIds\": [1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing roleIds)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hoalx1\",\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing password)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hoalx2\",\r\n    \"roleIds\": [1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (body not readable)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hoalx2\",\r\n    \"password\": \"hoalx2\",\r\n    \"roleIds\": [1],\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (empty body)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "update - 200",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (invalid id)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalidId",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (deleted)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (not existed)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (body not readable)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pasword\": \"hoalx1\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (empty body)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "delete - 200",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 400 (invalid id)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (not existed)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (deleted)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/users/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "device",
+			"item": [
+				{
+					"name": "findAll",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllArchived",
+					"item": [
+						{
+							"name": "findAllArchived - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/archived?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/archived?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/archived?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllBy",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/search?page=1&size=5&username=hoalx1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "username",
+											"value": "hoalx1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/search?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "userAgent",
+											"value": "Android",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 200 (no cond)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/search?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/search?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"search"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findById",
+					"item": [
+						{
+							"name": "findById - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (missing id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (invalid id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save - 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.2\",\r\n    \"userAgent\": \"Chrome\",\r\n    \"userId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (owning not existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.2\",\r\n    \"userAgent\": \"Chrome\",\r\n    \"userId\": -1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing ipAddress)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAgent\": \"Chrome\",\r\n    \"userId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (ipAddress existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.0\",\r\n    \"userAgent\": \"Chrome\",\r\n    \"userId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing userId)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.0\",\r\n    \"userAgent\": \"Chrome\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing userAgent)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.0\",\r\n    \"userId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (body not readable)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.0\",\r\n    \"userAgent\": \"Chrome\",\r\n    \"userId\": 1,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (empty body)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "update - 200",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAgent\": \"Android\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (invalid id)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalidId",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (deleted)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAgent\": \"Chrome\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (not existed)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (body not readable)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ipAddress\": \"0.0.0.0\",\r\n    \"userAgent\": \"Chrome\",\r\n    \"userId\": 1,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (empty body)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "delete - 200",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 400 (invalid id)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (not existed)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (deleted)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "status",
+			"item": [
+				{
+					"name": "findAll",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllArchived",
+					"item": [
+						{
+							"name": "findAllArchived - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/archived?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/archived?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/archived?size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										"archived"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAllArchived - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findAllBy",
+					"item": [
+						{
+							"name": "findAll - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/search?page=1&size=5&content=Le Xuan Hoa",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "content",
+											"value": "Le Xuan Hoa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/search?page=1&size=5&content=Hoa",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "content",
+											"value": "Hoa"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 200 (no cond)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/search?page=1&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size less than 5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/search?size=1&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										"search"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (size greater than 50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?size=55&page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "55"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (page less than 1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=0&size=5",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findAll - 400 (missing size)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses?page=1",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "findById",
+					"item": [
+						{
+							"name": "findById - 200",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (missing id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 400 (invalid id)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById - 204",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save",
+					"item": [
+						{
+							"name": "save - 200",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Le Xuan Hoa\",\r\n    \"userId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (owning not existed)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Le Xuan Hoa\",\r\n    \"userId\": -1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing content)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (missing userId)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Le Xuan Hoa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (body not readable)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Le Xuan Hoa\",\r\n    \"userId\": 1,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save - 400 (empty body)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "update - 200",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Hoa Le Xuan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (invalid id)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalidId",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (deleted)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userAgent\": \"Chrome\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (not existed)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"hoalx1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 400 (body not readable)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"0.0.0.0\",\r\n    \"userId\": 1,\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "5",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update - 200 (empty body)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/devices/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"devices",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "delete - 200",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 400 (invalid id)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "invalid",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (not existed)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "-1",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete - 200 (deleted)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LOCAL_ENDPOINT}}/statuses/:id",
+									"host": [
+										"{{LOCAL_ENDPOINT}}"
+									],
+									"path": [
+										"statuses",
+										":id"
+									],
+									"variable": [
+										{
+											"id": 0,
+											"key": "id",
+											"value": "2",
+											"type": "string"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
