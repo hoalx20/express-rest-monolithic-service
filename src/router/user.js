@@ -5,7 +5,6 @@ const { userCtl } = require('../controller');
 const {
 	validate: { idRule, validated },
 } = require('../middleware');
-const uriPath = 'users';
 
 route.post('/', userCtl.save);
 route.get('/', userCtl.findAll);
@@ -15,4 +14,4 @@ route.get('/:id', idRule(), validated, userCtl.findById);
 route.patch('/:id', idRule(), validated, userCtl.update);
 route.delete('/:id', idRule(), validated, userCtl.remove);
 
-module.exports = { route, uriPath };
+module.exports = route;

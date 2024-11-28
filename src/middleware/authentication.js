@@ -25,7 +25,7 @@ const authenticated = async (req, res, next) => {
 		try {
 			if (info) {
 				if (info.name === 'TokenExpiredError') return next(new ServiceExc(failure.TokenExpiredF));
-				next(new ServiceExc(global.UnauthorizedF));
+				return next(new ServiceExc(global.UnauthorizedF));
 			}
 			const accessToken = req.header('Authorization').replace('Bearer ', '');
 			await badCredentialSrv.ensureNotBadCredential(accessToken);

@@ -3,10 +3,14 @@ const cors = require('cors');
 const compression = require('compression');
 const helmet = require('helmet');
 const morgan = require('morgan');
+// @ts-ignore
+const swaggerDoc = require('./swagger.json');
+const swaggerUi = require('swagger-ui-express');
 
 const {
-	sequelizeClt: { sequelize },
-} = require('./client');
+	sequelizeCtx: { sequelize },
+	expressCtx: { app },
+} = require('./context');
 const {
 	global: { NotFoundF, UncategorizedF, BodyNotReadableF },
 } = require('./constant');
@@ -14,6 +18,7 @@ const model = require('./model');
 const response = require('./response');
 const ServiceExc = require('./exception');
 const passportProvider = require('./passport');
+const { routeSetup } = require('./router');
 
 const DBConfigF = 'can not established connection to database via sequelize.';
 
@@ -29,7 +34,7 @@ const dbConfig = async () => {
 	}
 };
 
-const middlewareConfig = (app) => {
+const middlewareConfig = () => {
 	app.use(express.json());
 	app.use(express.urlencoded({ extended: true }));
 	app.use(cors());
@@ -39,11 +44,11 @@ const middlewareConfig = (app) => {
 	app.use(morgan('dev'));
 };
 
-const passportConfig = (app) => {
-	passportProvider.jwtStrategy();
-};
+const routeConfig = () => routeSetup.established(app);
 
-const parseBodyConfig = (app) => {
+const passportConfig = () => passportProvider.jwtStrategy();
+
+const parseBodyConfig = () => {
 	app.use((err, req, res, next) => {
 		if (err.status == 400) {
 			response.doErrorWith(res, BodyNotReadableF);
@@ -53,7 +58,7 @@ const parseBodyConfig = (app) => {
 	});
 };
 
-const recoveryConfig = (app) => {
+const recoveryConfig = () => {
 	app.use((req, res, next) => {
 		response.doErrorWith(res, NotFoundF);
 	});
@@ -67,10 +72,6 @@ const recoveryConfig = (app) => {
 	});
 };
 
-const routeConfig = (app, args) => {
-	args.forEach((v) => {
-		app.use(`/api/v1/${v.uriPath}`, v.route);
-	});
-};
+const swaggerConfig = () => app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDoc, {}));
 
-module.exports = { dbConfig, middlewareConfig, parseBodyConfig, recoveryConfig, routeConfig, passportConfig };
+module.exports = { dbConfig, middlewareConfig, parseBodyConfig, recoveryConfig, routeConfig, passportConfig, swaggerConfig };

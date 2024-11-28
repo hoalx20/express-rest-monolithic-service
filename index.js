@@ -1,18 +1,19 @@
 require('dotenv').config();
-const express = require('express');
 
+const {
+	expressCtx: { app },
+} = require('./src/context');
 const appCfg = require('./src/config');
-const routers = require('./src/router');
 
 const main = async () => {
 	const PORT = process.env.PORT || 8000;
-	const app = express();
 	await appCfg.dbConfig();
-	appCfg.passportConfig(app);
-	appCfg.middlewareConfig(app);
-	appCfg.routeConfig(app, Object.values(routers));
-	appCfg.parseBodyConfig(app);
-	appCfg.recoveryConfig(app);
+	appCfg.passportConfig();
+	appCfg.middlewareConfig();
+	appCfg.swaggerConfig();
+	appCfg.routeConfig();
+	appCfg.parseBodyConfig();
+	appCfg.recoveryConfig();
 	app.listen(PORT);
 };
 

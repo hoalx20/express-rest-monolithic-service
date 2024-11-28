@@ -8,7 +8,7 @@ const jwtStrategy = () => {
 	passport.use(
 		new JwtStrategy(
 			{
-				jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+				jwtFromRequest: ExtractJwt.fromHeader('authorization'),
 				secretOrKey: process.env.ACCESS_TOKEN_SECRET,
 				passReqToCallback: true,
 			},

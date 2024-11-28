@@ -5,7 +5,6 @@ const { deviceCtl } = require('../controller');
 const {
 	validate: { idRule, validated },
 } = require('../middleware');
-const uriPath = 'devices';
 
 route.post('/', deviceCtl.save);
 route.get('/', deviceCtl.findAll);
@@ -15,4 +14,4 @@ route.get('/:id', idRule(), validated, deviceCtl.findById);
 route.patch('/:id', idRule(), validated, deviceCtl.update);
 route.delete('/:id', idRule(), validated, deviceCtl.remove);
 
-module.exports = { route, uriPath };
+module.exports = route;

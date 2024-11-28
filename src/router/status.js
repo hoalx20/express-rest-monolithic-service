@@ -10,7 +10,6 @@ const {
 const {
 	permission: { role },
 } = require('../constant');
-const uriPath = 'statuses';
 
 route.post('/', authenticate, statusCtl.save);
 route.get('/', statusCtl.findAll);
@@ -20,4 +19,4 @@ route.get('/:id', idRule(), validated, authenticate, hasAuthority(role.ROLE_USER
 route.patch('/:id', idRule(), validated, statusCtl.update);
 route.delete('/:id', idRule(), validated, statusCtl.remove);
 
-module.exports = { route, uriPath };
+module.exports = route;

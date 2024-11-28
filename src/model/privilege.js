@@ -1,6 +1,7 @@
 const {
-	sequelizeClt: { sequelize, DataTypes },
-} = require('../client');
+	sequelizeCtx: { sequelize },
+} = require('../context');
+const { DataTypes } = require('sequelize');
 
 const privilege = sequelize.define(
 	'privilege',

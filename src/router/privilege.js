@@ -5,7 +5,6 @@ const { privilegeCtl } = require('../controller');
 const {
 	validate: { idRule, validated },
 } = require('../middleware');
-const uriPath = 'privileges';
 
 route.post('/', privilegeCtl.save);
 route.get('/', privilegeCtl.findAll);
@@ -15,4 +14,4 @@ route.get('/:id', idRule(), validated, privilegeCtl.findById);
 route.patch('/:id', idRule(), validated, privilegeCtl.update);
 route.delete('/:id', idRule(), validated, privilegeCtl.remove);
 
-module.exports = { route, uriPath };
+module.exports = route;
