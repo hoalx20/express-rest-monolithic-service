@@ -8,6 +8,7 @@ const main = async () => {
 	const PORT = process.env.PORT || 8000;
 	const app = express();
 	await appCfg.dbConfig();
+	appCfg.passportConfig(app);
 	appCfg.middlewareConfig(app);
 	appCfg.routeConfig(app, Object.values(routers));
 	appCfg.parseBodyConfig(app);

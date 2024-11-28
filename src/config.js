@@ -13,6 +13,7 @@ const {
 const model = require('./model');
 const response = require('./response');
 const ServiceExc = require('./exception');
+const passportProvider = require('./passport');
 
 const DBConfigF = 'can not established connection to database via sequelize.';
 
@@ -38,6 +39,10 @@ const middlewareConfig = (app) => {
 	app.use(morgan('dev'));
 };
 
+const passportConfig = (app) => {
+	passportProvider.jwtStrategy();
+};
+
 const parseBodyConfig = (app) => {
 	app.use((err, req, res, next) => {
 		if (err.status == 400) {
@@ -57,7 +62,7 @@ const recoveryConfig = (app) => {
 			response.doError(res, err);
 			return;
 		}
-		console.log(`Error: ${err.message}`);
+		console.log(`Error on Recovery: ${err.message}`);
 		response.doErrorWith(res, UncategorizedF);
 	});
 };
@@ -68,4 +73,4 @@ const routeConfig = (app, args) => {
 	});
 };
 
-module.exports = { dbConfig, middlewareConfig, parseBodyConfig, recoveryConfig, routeConfig };
+module.exports = { dbConfig, middlewareConfig, parseBodyConfig, recoveryConfig, routeConfig, passportConfig };

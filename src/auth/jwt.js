@@ -22,7 +22,7 @@ const verify = (token, secretKey) => {
 		return jwt.verify(token, secretKey);
 	} catch (error) {
 		console.log(`Error on JsonWebToken: ${error.message}`);
-		if (error.name === 'TokenExpiredError') throw new ServiceExc(failure.JwtTokenExpiredF);
+		if (error.name === 'TokenExpiredError') throw new ServiceExc(failure.TokenExpiredF);
 		throw new ServiceExc(failure.IllLegalJwtTokenF);
 	}
 };

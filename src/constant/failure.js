@@ -25,7 +25,7 @@ module.exports = Object.freeze({
 	SignJwtTokenF: { code: 218, msg: 'can not sign token: ill legal claims or encrypt algorithm.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
 	ParseJwtTokenF: { code: 219, msg: 'can not parse token: ill legal token or encrypt algorithm.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
 	IllLegalJwtTokenF: { code: 220, msg: 'ill legal token: token has been edited, expired or not publish by us.', httpCode: StatusCodes.UNAUTHORIZED },
-	JwtTokenExpiredF: { code: 221, msg: 'ill legal token: token has been expired.', httpCode: StatusCodes.UNAUTHORIZED },
+	TokenExpiredF: { code: 221, msg: 'ill legal token: token has been expired.', httpCode: StatusCodes.UNAUTHORIZED },
 
 	SignUpF: { code: 222, msg: 'can not sign up: try again later.', httpCode: StatusCodes.INTERNAL_SERVER_ERROR },
 	UserExistedF: { code: 223, msg: 'user already existed, username must be unique.', httpCode: StatusCodes.BAD_REQUEST },

@@ -1,4 +1,6 @@
-const { failure } = require('../constant');
+const passport = require('passport');
+
+const { failure, global } = require('../constant');
 const ServiceExc = require('../exception');
 const { badCredentialSrv } = require('../service');
 
@@ -18,4 +20,24 @@ const authenticate = async (req, res, next) => {
 	}
 };
 
-module.exports = { authenticate };
+const authenticated = async (req, res, next) => {
+	await passport.authenticate('jwt', { session: false }, async (err, payload, info) => {
+		try {
+			if (info) {
+				if (info.name === 'TokenExpiredError') return next(new ServiceExc(failure.TokenExpiredF));
+				next(new ServiceExc(global.UnauthorizedF));
+			}
+			const accessToken = req.header('Authorization').replace('Bearer ', '');
+			await badCredentialSrv.ensureNotBadCredential(accessToken);
+			const { sub, jti, exp, ...user } = payload;
+			req.user = { ...user, username: sub, sessionId: jti, sessionExpiredAt: exp };
+			next();
+		} catch (error) {
+			console.log(`Error on Middleware: ${error.message}`);
+			if (error instanceof ServiceExc) return next(error);
+			next(new ServiceExc(global.UnauthorizedF));
+		}
+	})(req, res, next);
+};
+
+module.exports = { authenticate, authenticated };
