@@ -1,296 +1,261 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "Express Restful Service",
-    "description": "Express Restful Service Monolithic Architecture",
-    "version": "1.0.0"
-  },
-  "host": "localhost:8080",
-  "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
-  "securityDefinitions": {
-    "authorization": {
-      "type": "apiKey",
-      "in": "header",
-      "name": "Authorization",
-      "description": "access token"
-    },
-    "xRefreshToken": {
-      "type": "apiKey",
-      "in": "header",
-      "name": "X-REFRESH-TOKEN",
-      "description": "refresh token"
-    }
-  },
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "paths": {
-    "/api/v1/auth/sign-up": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Sign up for new user",
-        "description": "Sign up for new user with username, password and roleIds",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Register information.",
-            "schema": {
-              "$ref": "#/definitions/RegisterRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Register success.",
-            "schema": {
-              "$ref": "#/definitions/Credential"
-            }
-          },
-          "400": {
-            "description": "Bad request: missing username, password, roleIds, username already exists, etc..."
-          },
-          "500": {
-            "description": "Uncategorized error."
-          }
-        }
-      }
-    },
-    "/api/v1/auth/sign-in": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Sign in existing user",
-        "description": "Sign in existing user with username and password",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Credential information: username and password",
-            "schema": {
-              "$ref": "#/definitions/CredentialRequest"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Sign in success.",
-            "schema": {
-              "$ref": "#/definitions/Credential"
-            }
-          },
-          "400": {
-            "description": "Bad request: missing username, password, username not already exists, etc..."
-          },
-          "500": {
-            "description": "Uncategorized error."
-          }
-        }
-      }
-    },
-    "/api/v1/auth/me": {
-      "get": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Retrieve profile information",
-        "description": "Retrieve profile information using access token",
-        "responses": {
-          "200": {
-            "description": "Retrieve profile success.",
-            "schema": {
-              "$ref": "#/definitions/RegisterResponse"
-            }
-          },
-          "401": {
-            "description": "Unauthorized: missing token, token expired, token edited, token has been recall etc..."
-          },
-          "500": {
-            "description": "Uncategorized error."
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          }
-        ]
-      }
-    },
-    "/api/v1/auth/sign-out": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Sign out from logon session",
-        "description": "Sign out from logon session",
-        "responses": {
-          "200": {
-            "description": "Sign out success."
-          }
-        },
-        "security": [
-          {
-            "authorization": []
-          }
-        ]
-      }
-    },
-    "/api/v1/auth/refresh": {
-      "post": {
-        "tags": [
-          "auth"
-        ],
-        "summary": "Sign out from logon session",
-        "description": "Sign out from logon session",
-        "responses": {
-          "200": {
-            "description": "Sign out success."
-          },
-          "401": {
-            "description": "Unauthorized: missing token, token expired, token edited, token not suite, etc..."
-          },
-          "500": {
-            "description": "Uncategorized error."
-          }
-        },
-        "security": [
-          {
-            "authorization": [],
-            "xRefreshToken": []
-          }
-        ]
-      }
-    }
-  },
-  "definitions": {
-    "RegisterRequest": {
-      "type": "object",
-      "required": [
-        "username",
-        "password",
-        "roleIds"
-      ],
-      "properties": {
-        "username": {
-          "type": "string",
-          "description": "username must be a string, and unique",
-          "example": "hoalx0"
-        },
-        "password": {
-          "type": "string",
-          "description": "username must be a string",
-          "example": "hoalx0"
-        },
-        "roleIds": {
-          "type": "array",
-          "items": {
-            "type": "integer"
-          },
-          "description": "role id, must be an array of integer",
-          "example": [
-            1
-          ]
-        }
-      }
-    },
-    "Credential": {
-      "type": "object",
-      "required": [
-        "accessToken",
-        "refreshToken",
-        "accessTokenIssuedAt",
-        "refreshTokenIssuedAt"
-      ],
-      "properties": {
-        "accessToken": {
-          "type": "string",
-          "description": "access token",
-          "example": "accessToken"
-        },
-        "accessTokenIssuedAt": {
-          "type": "integer",
-          "description": "access token issued at",
-          "example": "accessTokenIssuedAt"
-        },
-        "refreshToken": {
-          "type": "string",
-          "description": "refresh token",
-          "example": 0
-        },
-        "refreshTokenIssuedAt": {
-          "type": "integer",
-          "description": "refresh token issued at",
-          "example": 0
-        }
-      }
-    },
-    "CredentialRequest": {
-      "type": "object",
-      "required": [
-        "username",
-        "password"
-      ],
-      "properties": {
-        "username": {
-          "type": "string",
-          "description": "username must be a string, and unique",
-          "example": "hoalx0"
-        },
-        "password": {
-          "type": "string",
-          "description": "username must be a string",
-          "example": "hoalx0"
-        }
-      }
-    },
-    "RegisterResponse": {
-      "type": "object",
-      "required": [
-        "username",
-        "password",
-        "roleIds"
-      ],
-      "properties": {
-        "id": {
-          "type": "integer",
-          "description": "user id",
-          "example": 1
-        },
-        "username": {
-          "type": "string",
-          "description": "username",
-          "example": "hoalx0"
-        },
-        "roleId": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          },
-          "description": "role information: include name, description and privileges",
-          "example": [
-            {
-              "name": "ADMIN",
-              "description": "admin role",
-              "privileges": [
-                {
-                  "name": "CREATE",
-                  "description": "create privilege"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    }
-  }
+	"swagger": "2.0",
+	"info": {
+		"title": "Express Restful Service",
+		"description": "Express Restful Service Monolithic Architecture",
+		"version": "1.0.0"
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"schemes": ["http", "https"],
+	"securityDefinitions": {
+		"authorization": {
+			"type": "apiKey",
+			"in": "header",
+			"name": "Authorization",
+			"description": "access token"
+		},
+		"xRefreshToken": {
+			"type": "apiKey",
+			"in": "header",
+			"name": "X-REFRESH-TOKEN",
+			"description": "refresh token"
+		}
+	},
+	"consumes": ["application/json"],
+	"produces": ["application/json"],
+	"paths": {
+		"/api/v1/auth/sign-up": {
+			"post": {
+				"tags": ["auth"],
+				"summary": "Sign up for new user",
+				"description": "Sign up for new user with username, password and roleIds",
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Register information.",
+						"schema": {
+							"$ref": "#/definitions/RegisterRequest"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Register success.",
+						"schema": {
+							"$ref": "#/definitions/Credential"
+						}
+					},
+					"400": {
+						"description": "Bad request: missing username, password, roleIds, username already exists, etc..."
+					},
+					"500": {
+						"description": "Uncategorized error."
+					}
+				}
+			}
+		},
+		"/api/v1/auth/sign-in": {
+			"post": {
+				"tags": ["auth"],
+				"summary": "Sign in existing user",
+				"description": "Sign in existing user with username and password",
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"description": "Credential information: username and password",
+						"schema": {
+							"$ref": "#/definitions/CredentialRequest"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Sign in success.",
+						"schema": {
+							"$ref": "#/definitions/Credential"
+						}
+					},
+					"400": {
+						"description": "Bad request: missing username, password, username not already exists, etc..."
+					},
+					"500": {
+						"description": "Uncategorized error."
+					}
+				}
+			}
+		},
+		"/api/v1/auth/me": {
+			"get": {
+				"tags": ["auth"],
+				"summary": "Retrieve profile information",
+				"description": "Retrieve profile information using access token",
+				"responses": {
+					"200": {
+						"description": "Retrieve profile success.",
+						"schema": {
+							"$ref": "#/definitions/RegisterResponse"
+						}
+					},
+					"401": {
+						"description": "Unauthorized: missing token, token expired, token edited, token has been recall etc..."
+					},
+					"500": {
+						"description": "Uncategorized error."
+					}
+				},
+				"security": [
+					{
+						"authorization": []
+					}
+				]
+			}
+		},
+		"/api/v1/auth/sign-out": {
+			"post": {
+				"tags": ["auth"],
+				"summary": "Sign out from logon session",
+				"description": "Sign out from logon session",
+				"responses": {
+					"200": {
+						"description": "Sign out success."
+					}
+				},
+				"security": [
+					{
+						"authorization": []
+					}
+				]
+			}
+		},
+		"/api/v1/auth/refresh": {
+			"post": {
+				"tags": ["auth"],
+				"summary": "Sign out from logon session",
+				"description": "Sign out from logon session",
+				"responses": {
+					"200": {
+						"description": "Sign out success."
+					},
+					"401": {
+						"description": "Unauthorized: missing token, token expired, token edited, token not suite, etc..."
+					},
+					"500": {
+						"description": "Uncategorized error."
+					}
+				},
+				"security": [
+					{
+						"authorization": [],
+						"xRefreshToken": []
+					}
+				]
+			}
+		}
+	},
+	"definitions": {
+		"RegisterRequest": {
+			"type": "object",
+			"required": ["username", "password", "roleIds"],
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "username must be a string, and unique",
+					"example": "hoalx0"
+				},
+				"password": {
+					"type": "string",
+					"description": "username must be a string",
+					"example": "hoalx0"
+				},
+				"roleIds": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"description": "role id, must be an array of integer",
+					"example": [1]
+				}
+			}
+		},
+		"Credential": {
+			"type": "object",
+			"required": ["accessToken", "refreshToken", "accessTokenIssuedAt", "refreshTokenIssuedAt"],
+			"properties": {
+				"accessToken": {
+					"type": "string",
+					"description": "access token",
+					"example": "accessToken"
+				},
+				"accessTokenIssuedAt": {
+					"type": "integer",
+					"description": "access token issued at",
+					"example": "accessTokenIssuedAt"
+				},
+				"refreshToken": {
+					"type": "string",
+					"description": "refresh token",
+					"example": 0
+				},
+				"refreshTokenIssuedAt": {
+					"type": "integer",
+					"description": "refresh token issued at",
+					"example": 0
+				}
+			}
+		},
+		"CredentialRequest": {
+			"type": "object",
+			"required": ["username", "password"],
+			"properties": {
+				"username": {
+					"type": "string",
+					"description": "username must be a string, and unique",
+					"example": "hoalx0"
+				},
+				"password": {
+					"type": "string",
+					"description": "username must be a string",
+					"example": "hoalx0"
+				}
+			}
+		},
+		"RegisterResponse": {
+			"type": "object",
+			"required": ["username", "password", "roleIds"],
+			"properties": {
+				"id": {
+					"type": "integer",
+					"description": "user id",
+					"example": 1
+				},
+				"username": {
+					"type": "string",
+					"description": "username",
+					"example": "hoalx0"
+				},
+				"roleId": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					},
+					"description": "role information: include name, description and privileges",
+					"example": [
+						{
+							"name": "ADMIN",
+							"description": "admin role",
+							"privileges": [
+								{
+									"name": "CREATE",
+									"description": "create privilege"
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	}
 }

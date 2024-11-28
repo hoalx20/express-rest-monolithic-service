@@ -1,10 +1,9 @@
 {
-    "compilerOptions": {
-      "module": "CommonJS",
-      "target": "ES6",
-      "checkJs": true,
-      "noUnusedLocals": true,
-    },
-    "exclude": ["node_modules", "data"],
-  }
-  
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES6",
+		"checkJs": true,
+		"noUnusedLocals": true
+	},
+	"exclude": ["node_modules", "data"]
+}
